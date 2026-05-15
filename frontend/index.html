@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Survey Gen | Local & Powerful</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>AI Survey <span>Gen</span></h1>
+            <p>Powered by Phi-3 Mini & Ollama</p>
+        </header>
+
+        <main>
+            <div class="glass-card input-section">
+                <h2>Describe your survey</h2>
+                <textarea id="rawInput" placeholder="e.g., I want a survey for my bakery customers to understand their favorite pastries and how they feel about our opening hours..."></textarea>
+                <button id="generateBtn">Generate Survey</button>
+            </div>
+
+            <div id="statusContainer" class="status-container hidden">
+                <div class="status-item" id="status-cleaning">
+                    <span class="dot"></span> Cleaning Input...
+                </div>
+                <div class="status-item" id="status-analyzing">
+                    <span class="dot"></span> Analyzing Intent...
+                </div>
+                <div class="status-item" id="status-generating">
+                    <span class="dot"></span> Generating Questions...
+                </div>
+                <div class="status-item" id="status-validating">
+                    <span class="dot"></span> Validating Quality...
+                </div>
+            </div>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div class="glass-card result-card">
+                    <div class="result-header">
+                        <h2 id="surveyTitle">Survey Title</h2>
+                        <p id="surveyDescription">Survey Description</p>
+                    </div>
+                    <div id="questionsList" class="questions-list"></div>
+                    <div class="actions">
+                        <button class="secondary-btn" onclick="copyJSON()">Copy JSON</button>
+                        <button class="secondary-btn" onclick="resetUI()">New Survey</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Running locally on your machine. Privacy first.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
